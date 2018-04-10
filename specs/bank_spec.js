@@ -42,4 +42,15 @@ describe('bank', function() {
     assert.equal(100, bank.accountAverage());
   });
 
+  it("should find the total value for an account type", function() {
+    var bank = new Bank();
+    var account1 = new Account({owner:'Kara',amount:10000, type:'personal'});
+    var account2 = new Account({owner:'Jason',amount:500, type:'buisness'});
+    var account3 = new Account({owner:'Stacy',amount:1000, type:'personal'});
+    bank.addAccount(account1);
+    bank.addAccount(account2);
+    bank.addAccount(account3);
+    assert.equal(11000, bank.totalCash('personal') );
+  });
+
 });

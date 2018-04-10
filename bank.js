@@ -38,4 +38,14 @@ Bank.prototype.accountAverage = function() {
   return this.totalCash()/this.accounts.length;
 }
 
+Bank.prototype.largestAccount = function(){
+  let largest = this.accounts[0];
+  for (var account of this.accounts) {
+    if (account.amount > largest) {
+      largest = account;
+    }
+  }
+  return largest;
+}
+
 module.exports = Bank;
