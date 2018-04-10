@@ -16,4 +16,22 @@ Bank.prototype.findAccountByOwnerName = function(ownerName) {
   return foundAccount;
 }
 
+Bank.prototype.totalCash = function(type) {
+  var total = 0;
+  for (account of this.filteredAccounts(type)) {
+    total += account.amount;
+  }
+  return total;
+}
+
+Bank.prototype.filteredAccounts = function(type) {
+  if(!type) return this.accounts;
+  var filteredAccounts = [];
+  for (account of this.accounts) {
+    if(type === account.type)
+    filteredAccounts.push(account);
+  }
+  return filteredAccounts;
+}
+
 module.exports = Bank;

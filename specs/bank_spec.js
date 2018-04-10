@@ -24,4 +24,13 @@ describe('bank', function() {
     assert.deepEqual(account, foundAccount);
   });
 
+  it('should find the total account value', function() {
+    var bank = new Bank();
+    var account1 = new Account({owner:'Kara',amount:10000, type:'personal'});
+    var account2 = new Account({owner:'Jason',amount:500, type:'buisness'});
+    bank.addAccount(account1);
+    bank.addAccount(account2);
+    assert.equal(10500, bank.totalCash());
+  });
+
 });
