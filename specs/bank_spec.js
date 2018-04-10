@@ -33,4 +33,13 @@ describe('bank', function() {
     assert.equal(10500, bank.totalCash());
   });
 
+  it('should find the average value', function() {
+    var bank = new Bank();
+    var account1 = new Account({owner:'Kara',amount:150, type:'personal'});
+    var account2 = new Account({owner:'Jason',amount:50, type:'buisness'});
+    bank.addAccount(account1);
+    bank.addAccount(account2);
+    assert.equal(100, bank.accountAverage());
+  });
+
 });
