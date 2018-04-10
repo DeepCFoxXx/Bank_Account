@@ -34,4 +34,8 @@ Bank.prototype.filteredAccounts = function(type) {
   return filteredAccounts;
 }
 
+Bank.prototype.accountAverage = function() {
+  return this.totalCash()/this.accounts.length;
+}
+
 module.exports = Bank;
