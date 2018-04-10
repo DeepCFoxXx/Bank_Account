@@ -9,4 +9,9 @@ describe('account', function() {
     assert.equal(account.owner, 'Kara');
   });
 
+  it('should have a amount', function() {
+    var account = new Account({owner:'Kara',amount:10000, type:'personal'});
+    assert.equal(account.amount, 10000);
+  });
+
 });
